@@ -437,8 +437,7 @@
                             ],
                             "from": {
                                 "kind": "ImageStreamTag",
-                                "name": "postgresql:9.6",
-                                "namespace": "openshift"
+                                "name": "postgresql-12:1-36"
                             }
                         },
                         "type": "ImageChange"
