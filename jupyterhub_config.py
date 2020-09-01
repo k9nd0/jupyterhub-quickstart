@@ -166,8 +166,8 @@ c.KubeSpawner.common_labels = { 'app': application_name }
 # c.KubeSpawner.uid = os.getuid()
 # c.KubeSpawner.fs_gid = os.getuid()
 
-c.KubeSpawner.uid = '1001'
-c.KubeSpawner.fs_gid = 'root'
+c.KubeSpawner.uid = 1001
+c.KubeSpawner.fs_gid = 0
 
 c.KubeSpawner.extra_annotations = {
     "alpha.image.policy.openshift.io/resolve-names": "*"
