@@ -29,8 +29,8 @@ items:
         type: Source
         sourceStrategy:
           from:
-            kind: DockerImage
-            name: registry.access.redhat.com/ubi8/python-38
+            kind: ImageStreamTag
+            name: python-38-nodejs-14:latest
       output:
         to:
           kind: ImageStreamTag
