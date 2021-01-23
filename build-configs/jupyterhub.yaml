@@ -23,16 +23,15 @@ items:
       source:
         type: Git
         git:
-          uri: 'https://github.com/k9nd0/jupyterhub-quickstart.git'
+          uri: https://github.com/k9nd0/jupyterhub-quickstart.git
           ref: develop
       strategy:
         type: Source
         sourceStrategy:
           from:
-            kind: ImageStreamTag
-            name: 'python:3.6'
-            namespace: openshift
+            kind: DockerImage
+            name: registry.access.redhat.com/ubi8/python-38
       output:
         to:
           kind: ImageStreamTag
-          name: 'jupyterhub:3.4.0'
+          name: jupyterhub:latest
