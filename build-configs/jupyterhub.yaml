@@ -30,7 +30,7 @@ items:
         sourceStrategy:
           from:
             kind: ImageStreamTag
-            name: python-nodejs:latest
+            name: python-38-nodejs-14:latest
       output:
         to:
           kind: ImageStreamTag
