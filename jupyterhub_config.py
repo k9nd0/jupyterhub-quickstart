@@ -43,20 +43,19 @@ def convert_size_to_bytes(size):
 # which disables verification of the certificate. If don't use this the
 # Python openshift/kubernetes clients will fail. We also disable any
 # warnings from urllib3 to get rid of the noise in the logs this creates.
-# print('ok')
-# load_incluster_config()
+print('ok')
+load_incluster_config()
 # print('ok')
 # import urllib3
 # urllib3.disable_warnings()
 # instance = Configuration()
 # instance.verify_ssl = False
 # Configuration.set_default(instance)
+
 print('ok')
-config.load_incluster_config()
+# k8s_client = client.CoreV1Api()
 print('ok')
-k8s_client = client.CoreV1Api()
-print('ok')
-api_client = DynamicClient(k8s_client)
+api_client = DynamicClient(ApiClient())
 print('ok')
 image_stream_resource = api_client.resources.get(
      api_version='image.openshift.io/v1', kind='ImageStream')
