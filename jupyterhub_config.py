@@ -4,8 +4,8 @@ import wrapt
 
 from kubernetes import client, config
 from kubernetes.client.configuration import Configuration
-from kubernetes.config.incluster_config import load_incluster_config
-from kubernetes.client.api_client import ApiClient
+# from kubernetes.config.incluster_config import load_incluster_config
+# from kubernetes.client.api_client import ApiClient
 from kubernetes.client.rest import ApiException
 from openshift.dynamic import DynamicClient
 
@@ -52,7 +52,9 @@ def convert_size_to_bytes(size):
 # instance.verify_ssl = False
 # Configuration.set_default(instance)
 print('ok')
-k8s_client = config.new_client_from_config()
+config.load_incluster_config()
+print('ok')
+k8s_client = client.CoreV1Api()
 print('ok')
 api_client = DynamicClient(k8s_client)
 print('ok')
