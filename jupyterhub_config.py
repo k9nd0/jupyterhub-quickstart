@@ -4,8 +4,8 @@ import wrapt
 
 from kubernetes import client, config
 from kubernetes.client.configuration import Configuration
-# from kubernetes.config.incluster_config import load_incluster_config
-# from kubernetes.client.api_client import ApiClient
+from kubernetes.config.incluster_config import load_incluster_config
+from kubernetes.client.api_client import ApiClient
 from kubernetes.client.rest import ApiException
 from openshift.dynamic import DynamicClient
 
