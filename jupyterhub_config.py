@@ -2,6 +2,7 @@ import os
 
 import wrapt
 
+from kubernetes import client, config
 from kubernetes.client.configuration import Configuration
 from kubernetes.config.incluster_config import load_incluster_config
 from kubernetes.client.api_client import ApiClient
@@ -51,7 +52,9 @@ instance = Configuration()
 instance.verify_ssl = False
 Configuration.set_default(instance)
 print('ok')
-api_client = DynamicClient(ApiClient())
+k8s_client = config.new_client_from_config()
+print('ok')
+api_client = DynamicClient(k8s_client)
 print('ok')
 image_stream_resource = api_client.resources.get(
      api_version='image.openshift.io/v1', kind='ImageStream')
